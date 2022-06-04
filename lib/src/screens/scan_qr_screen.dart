@@ -2,8 +2,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:qrcodescanner/src/utils/constant.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:permission_handler/permission_handler.dart';
 class ScanQrCodeScreen extends StatefulWidget {
   const ScanQrCodeScreen({ Key? key }) : super(key: key);
@@ -37,8 +39,9 @@ class _ScanQrCodeScreenState extends State<ScanQrCodeScreen> {
         children: [
           buildQrViewer(context),
           Positioned(
-            bottom: 10,
-            child: Text(barcode != null ? "Result ${barcode!.code}" : "Scan Qr code",style: const TextStyle(color: Colors.white,fontSize: 20),),
+            width: MediaQuery.of(context).size.width,
+            bottom: 20,
+            child: Text(barcode != null ? "Result ${barcode!.code}" : "Scan Qr code",style: const TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center),
           ),
           Positioned(
             top: 10,
@@ -127,7 +130,19 @@ class _ScanQrCodeScreenState extends State<ScanQrCodeScreen> {
     controller.scannedDataStream.listen((code) { 
       setState(() {
         barcode = code;
+        Clipboard.setData(ClipboardData(text: "${barcode?.code}"));
+        
+        // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${barcode?.code}')));
       });
+      Fluttertoast.showToast(
+          msg: "Text Copy Successfully",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM,
+          timeInSecForIosWeb: 1,
+          backgroundColor: MyColors.primary,
+          textColor: Colors.white,
+          fontSize: 16.0
+      );
     });
   }
 }

@@ -10,6 +10,8 @@ class AboutUs extends StatelessWidget {
     String gitHubUrl = "https://github.com/KaranDuggal/PDF-Viewer";
     return Center(
       child: Card(
+        elevation: 8,
+        shadowColor: MyColors.primary,
         child: SizedBox(
           width: MediaQuery.of(context).size.width - 100,
           height: MediaQuery.of(context).size.width - 180,
@@ -39,7 +41,7 @@ class AboutUs extends StatelessWidget {
                 primary: MyColors.primary
               ),
               onPressed: ()async {  
-                await launch(gitHubUrl);  
+                await launchUrl(Uri.parse(gitHubUrl));  
               },
               child:  SizedBox(
                 width: 120,
@@ -55,8 +57,6 @@ class AboutUs extends StatelessWidget {
             ],
           )
         ),
-        elevation: 8,
-        shadowColor: MyColors.primary,
         // shape: BeveledRectangleBorder(
         //     borderRadius: BorderRadius.circular(15)
         // ),
