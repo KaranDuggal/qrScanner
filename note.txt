@@ -1,5 +1,5 @@
 flutter clean && flutter build apk --build-name=1.0.1 --build-number=1
-flutter build appbundle
+flutter clean && flutter build appbundle
 
 /snap/android-studio/121/android-studio/jre/bin/keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
 password qrscanner@123duggal
