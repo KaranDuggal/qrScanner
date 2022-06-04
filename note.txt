@@ -1,2 +1,2 @@
-flutter build apk --build-name=1.0.1 --build-number=1
+flutter clean && flutter build apk --build-name=1.0.1 --build-number=1
 flutter build appbundle
