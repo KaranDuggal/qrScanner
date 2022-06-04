@@ -42,7 +42,7 @@ dependencies:
   flutter_native_splash: ^2.2.2
 
 flutter_native_splash:
-  color: "283B71"
+  color: "889FA5"
   image: "assets/images/qrcodelogo.png"
   width: 100,
   height: 100,
