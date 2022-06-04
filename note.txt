@@ -1,2 +1,17 @@
 flutter clean && flutter build apk --build-name=1.0.1 --build-number=1
 flutter build appbundle
+
+/snap/android-studio/121/android-studio/jre/bin/keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+password qrscanner@123duggal
+What is your first and last name?
+  [karan duggal]:  
+What is the name of your organizational unit?
+  [duggal]:  
+What is the name of your organization?
+  [duggal]:  
+What is the name of your City or Locality?
+  [jalandhar]:  
+What is the name of your State or Province?
+  [punjab]:  
+What is the two-letter country code for this unit?
+  [in]: 
