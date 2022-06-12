@@ -7,7 +7,7 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String gitHubUrl = "https://github.com/KaranDuggal/PDF-Viewer";
+    String gitHubUrl = "https://github.com/KaranDuggal/qrScanner";
     return Center(
       child: Card(
         elevation: 8,
